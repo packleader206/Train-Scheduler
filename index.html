@@ -23,7 +23,9 @@
 
         <div class="row">
             <div class="col-9 text-center">
-                    <table class="table table-bordered">
+                <div class="table-header">
+                    <h5 class="text-center">Train Schedule</h5>
+                    <table class="table table-hover">
                             <thead>
                               <tr>
                                 <th scope="col">Train Name</th>
@@ -45,11 +47,37 @@
                               </tr>
                             </tbody>
                     </table>    
-
+                </div>
             </div>
 
-            <div class="col-3 text-center">
-                
+            <div class="col-3">
+                <div class="form-header">
+                    <h5 class="text-center">Add a Train</h5>
+                    
+                    <form>
+                        <div class="form-group">
+                            <label>Train Name</label>
+                            <input type="text" class="form-control" id="trainName">
+                        </div>
+                        <div class="form-group">
+                            <label>Destination</label>
+                            <input type="text" class="form-control" id="Destination">
+                        </div>
+                        <div class="form-group">
+                            <label>First Train Time: HH:mm - military time</label>
+                            <input type="text" class="form-control" id="firstTrainTime">
+                        </div>
+                        <div class="form-group">
+                                <label>Frequency</label>
+                                <input type="text" class="form-control" id="frequency">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Add Train</button>
+                          
+                    </form>
+
+                </div>
+
 
             </div>
 
