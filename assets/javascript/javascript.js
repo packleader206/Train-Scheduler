@@ -14,7 +14,30 @@ $(document).ready(function(){
     };
     firebase.initializeApp(config);
 
+    let database = firebase.database();
+
+    //event listener for user click of 'Add Train' button. Grabs user input values and adds data to firebase
+    $("#addTrain").on("click", function (event) {
+    event.preventDefault();
+
+        //grab input values
+        let trainName = $("#trainName").val().trim();
+        let destination = $("#destination").val().trim();
+        let firstTrainTime = $("#firstTrainTime").val().trim();
+        let frequency = $("#frequency").val().trim();
+
+        //create firebase variables, push data to firebase
+        database.ref().push ({
+            trainName: trainName,
+            destination: destination,
+            firstTrainTime: firstTrainTime,
+            frequency: frequency,
+        });
+    });
+
     
+
+
 });
 
 
