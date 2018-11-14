@@ -19,7 +19,10 @@
         
         <div class="jumbotron text-center">
             <h1>Train Scheduler</h1>
-            <h5>Week 7 Homework Assignment</h5>
+            <h5>Always on Time</h5>
+            <br>
+            <p class="currentTime">Current Time:</p>
+            <p class="currentTime" id="timeDisplay"></p>
         </div>
 
         <div class="row">
@@ -53,17 +56,17 @@
             </div>
 
             <div class="col-9 text-center">
-                <div class="table-header">
+                <div>
                     <h5 class="text-center">Train Schedule</h5>
                     <table class="table table-hover">
-                            <thead>
+                            <thead class="tableHeader">
                               <tr>
                                 <th scope="col">Train Name</th>
                                 <th scope="col">Destination</th>
                                 <th scope="col">Frequency</th>
                                 <th scope="col">Next Arrival</th>
                                 <th scope="col">Minutes Away</th>
-                                <th scope="col">Remove</th>
+                                <th scope="col" class="removeHeader">Remove</th>
                               </tr>
                             </thead>
                             <tbody id="tableBody">

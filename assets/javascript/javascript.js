@@ -17,6 +17,8 @@ $(document).ready(function(){
       console.log(firebase);
   
       let database = firebase.database();
+
+      $("#timeDisplay").append(moment().format("hh:mm A"));
   
   
       //event listener for user click of 'Add Train' button. Grabs user input values and adds data to firebase
@@ -71,21 +73,29 @@ $(document).ready(function(){
         let nextArrival = moment().add(minutesAway, "m").format("hh:mm A");
         console.log(nextArrival);
         
+        //variable created to associate the delete button with corresponding data set in firebase
+        let key = childSnapshot.key;
+
         //on child_added event listener, once new data is added to firebase, script will add/append data to the HTML table based on corresponding logic above.
         $("#tableBody").append (
-            "<tr><td>" + newTrain +
-            "</td><td>" + newDestination +
-            "</td><td>" + newFrequency +
-            "</td><td>" + nextArrival +
-            "</td><td>" + minutesAway +
-            "</td><td>" + "x" + "</td></tr>");
+            "<tr><td class='text-center'>" + newTrain +
+            "</td><td class='text-center'>" + newDestination +
+            "</td><td class='text-center'>" + newFrequency +
+            "</td><td class='text-center'>" + nextArrival +
+            "</td><td class='text-center'>" + minutesAway +
+            "</td><td class='text-center'><button class='delete btn btn-danger btn-xs' data-key='" + key + "'>X</button></td></tr>")
       },
         //standard error handler
         function (errorObject) {
         console.log("Errors handeled: " + errorObject.code);
       });
-  
-      
+
+      //event listener for user click of any delete button, deletes corresponding data from firebase, then reloads firebase data (with the deleted record removed).
+      $(document).on("click", ".delete", function() {
+        keyref = $(this).attr("data-key");
+        database.ref().child(keyref).remove();
+        window.location.reload();
+      });   
   });
 
 
