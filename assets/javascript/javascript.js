@@ -50,10 +50,10 @@ $(document).ready(function(){
         let newFirstTrainTime = childSnapshot.val().firstTrainTime;
         let newFrequency = childSnapshot.val().frequency;
 
-        console.log(trainName);
-        console.log(destination);
-        console.log(firstTrainTime);
-        console.log(frequency);
+        console.log(newTrain);
+        console.log(newDestination);
+        console.log(newFirstTrainTime);
+        console.log(newFrequency);
 
         let currentTime = moment();
         console.log(currentTime);
