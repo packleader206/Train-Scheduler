@@ -18,6 +18,7 @@ $(document).ready(function(){
   
       let database = firebase.database();
 
+      //displays current time in Jumbotron using moment function & sets time format
       $("#timeDisplay").append(moment().format("hh:mm A"));
   
   
