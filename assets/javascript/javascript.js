@@ -46,7 +46,7 @@ $(document).ready(function(){
       //firebase event listener for new data. When new data is added to the database, function runs accordingly
       database.ref().on("child_added", function(childSnapshot) {
         
-        //set up variables for childSnapshot function of user inputs
+        //set up variables for childSnapshot function of user inputs. Sets the variable to reference the most recent child added to firebase.
         let newTrain = childSnapshot.val().trainName;
         let newDestination = childSnapshot.val().destination;
         let newFirstTrainTime = childSnapshot.val().firstTrainTime;
@@ -57,25 +57,31 @@ $(document).ready(function(){
         console.log(newFirstTrainTime);
         console.log(newFrequency);
 
+        //variable for current time using moment function
         let currentTime = moment();
         console.log(currentTime);
 
-        //calculate the difference between the current time & 'newFirstTrainTime' using Unix timestamp & convert to minutes
-        let timeDifference = moment().diff(moment().unix(newFirstTrainTime, "minutes"));
+        //convert user input/child snapshot for newFirstTrainTime to exactly 1 year prior to ensure that entry is before the present day/time. Actual calender year is insignificant for the calculations in this app to function properly.
+        let startTimeConverted = moment(newFirstTrainTime, "hh:mm").subtract(1, "years");
+        console.log(startTimeConverted);
+        
+        //calculate the difference between the current time and the newFirstTrainTime in minutes
+        let timeDifference = moment().diff(moment(startTimeConverted), "minutes");
         console.log(timeDifference);
-
-        //take the time difference & get the remainder value using modulus(%). Once remainder value is achieved, I can use that and subtract it from the frequency to calculate the minutes away for the next train.
+        
+        //take the timeDifference and calculate the remainder value using modulus(%). Once remainder value is achieved, I can use that and subtract it from the frequency to calculate the minutes away for the next train.
         let remainder = timeDifference % newFrequency;
         console.log(remainder);
 
-        //subracting the remainder value calculated above from the frequency value of the corresponding train will give me the minutes away for the next train arrival.
+        //subtracting the remainder value calculated above from the frequency value of the corresponding train will give me the minutes away for the next train arrival.
         let minutesAway = newFrequency - remainder;
         console.log(minutesAway);
 
-        //adding minutesAway to the current time will give me the time the next train is due to arrive.  Then convert it to a standard time format.
-        let nextArrival = moment().add(minutesAway, "m").format("hh:mm A");
+        //adding minutesAway to the current time will give me the time the next train is due to arrive. Then convert it to a standard time format.  
+        let nextArrival = moment().add(minutesAway, "minutes").format("hh:mm A");
         console.log(nextArrival);
-        
+
+       
         //variable created to associate the delete button with corresponding data set in firebase
         let key = childSnapshot.key;
 
