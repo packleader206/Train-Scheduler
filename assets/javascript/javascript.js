@@ -44,7 +44,8 @@ $(document).ready(function(){
   
       //firebase event listener for new data. When new data is added to the database, function runs accordingly
       database.ref().on("child_added", function(childSnapshot) {
-  
+        
+        //set up variables for childSnapshot function of user inputs
         let newTrain = childSnapshot.val().trainName;
         let newDestination = childSnapshot.val().destination;
         let newFirstTrainTime = childSnapshot.val().firstTrainTime;
