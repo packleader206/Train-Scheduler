@@ -38,6 +38,7 @@ $(document).ready(function(){
               firstTrainTime: firstTrainTime,
               frequency: frequency
           });
+          //resets form, clears out the form fields for next input
           $("#userInputForm").trigger("reset");
       });
   
@@ -76,7 +77,7 @@ $(document).ready(function(){
         //variable created to associate the delete button with corresponding data set in firebase
         let key = childSnapshot.key;
 
-        //on child_added event listener, once new data is added to firebase, script will add/append data to the HTML table based on corresponding logic above.
+        //using the on child_added event listener, once new data is added to firebase, use JQuery below to add/append data to the HTML table based on corresponding logic above.
         $("#tableBody").append (
             "<tr><td class='text-center'>" + newTrain +
             "</td><td class='text-center'>" + newDestination +
