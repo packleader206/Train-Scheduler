@@ -19,7 +19,7 @@ $(document).ready(function(){
       let database = firebase.database();
 
       //displays current time in Jumbotron using moment function & sets time format
-      $("#timeDisplay").append(moment().format("hh:mm A"));
+      $("#timeDisplay").text(moment().format("hh:mm A"));
   
   
       //event listener for user click of 'Add Train' button. Grabs user input values and adds data to firebase
@@ -46,7 +46,7 @@ $(document).ready(function(){
       //firebase event listener for new data. When new data is added to the database, function runs accordingly
       database.ref().on("child_added", function(childSnapshot) {
         
-        //set up variables for childSnapshot function of user inputs. Sets the variable to reference the most recent child added to firebase.
+        //set up variables for childSnapshot function of user inputs. Sets variables to reference the most recent child added to firebase.
         let newTrain = childSnapshot.val().trainName;
         let newDestination = childSnapshot.val().destination;
         let newFirstTrainTime = childSnapshot.val().firstTrainTime;
@@ -81,9 +81,9 @@ $(document).ready(function(){
         let nextArrival = moment().add(minutesAway, "minutes").format("hh:mm A");
         console.log(nextArrival);
 
-       
         //variable created to associate the delete button with corresponding data set in firebase
         let key = childSnapshot.key;
+        console.log(key);
 
         //using the on child_added event listener, once new data is added to firebase, use JQuery below to add/append data to the HTML table based on corresponding logic above.
         $("#tableBody").append (
@@ -101,8 +101,8 @@ $(document).ready(function(){
 
       //event listener for user click of any delete button, deletes corresponding data from firebase, then reloads firebase data (with the deleted record removed).
       $(document).on("click", ".delete", function() {
-        keyref = $(this).attr("data-key");
-        database.ref().child(keyref).remove();
+        keyRef = $(this).attr("data-key");
+        database.ref().child(keyRef).remove();
         window.location.reload();
       });   
   });
