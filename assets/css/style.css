@@ -17,8 +17,10 @@
     padding: 15px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 800;
-    background-color: rgb(60, 60, 133);
+    background-color: rgb(54, 54, 172);
     color: white;
+    margin-top: 30px;
+    border: 1px solid black;
 }
 
 .remove {
@@ -33,3 +35,56 @@
     text-align: center;
 }
 
+body {
+    background-image: URL(../images/background1JPG.jpg);
+}
+
+.form-header {
+    background-color: rgb(159, 162, 214);
+    padding: 20px;
+    border: 1px solid black;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    font-weight: 700;
+}
+
+.table-box {
+    background-color: rgb(159, 162, 214);
+    padding: 20px;
+    border: 1px solid black;
+    margin-bottom: 30px;
+}
+
+#trainScheduleTitle {
+    background-color: rgb(54, 54, 172);
+    margin: 0;
+    padding: 0;
+    color: white;
+    border: 1px solid black;
+}
+
+#addTrainTitle {
+    background-color: rgb(54, 54, 172);
+    margin: 0;
+    padding: 0;
+    color: white;
+    border: 1px solid black;
+}
+
+#userInputForm {
+    margin-top: 12px;
+}
+
+h5 {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 80px;
+}

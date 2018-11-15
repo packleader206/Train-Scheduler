@@ -19,7 +19,7 @@
         
         <div class="jumbotron text-center">
             <h1>Train Scheduler</h1>
-            <h5>Always on Time</h5>
+            <!-- <h5>Always on Time</h5> -->
             <br>
             <p class="currentTime">Current Time:</p>
             <p class="currentTime" id="timeDisplay"></p>
@@ -28,15 +28,14 @@
         <div class="row">
             <div class="col-3">
                 <div class="form-header">
-                    <h5 class="text-center">Add a Train</h5>
-                    
+                    <h5 class="text-center" id="addTrainTitle">Add a Train</h5>
                     <form id="userInputForm">
                         <div class="form-group">
-                            <label>Train Name</label>
+                            <label>Train Name:</label>
                             <input type="text" class="form-control" id="trainName">
                         </div>
                         <div class="form-group">
-                            <label>Destination</label>
+                            <label>Destination:</label>
                             <input type="text" class="form-control" id="destination">
                         </div>
                         <div class="form-group">
@@ -44,7 +43,7 @@
                             <input type="text" class="form-control" id="firstTrainTime">
                         </div>
                         <div class="form-group">
-                                <label>Frequency</label>
+                                <label>Frequency:</label>
                                 <input type="text" class="form-control" id="frequency">
                         </div>
 
@@ -56,8 +55,8 @@
             </div>
 
             <div class="col-9 text-center">
-                <div>
-                    <h5 class="text-center">Train Schedule</h5>
+                <div class="table-box">
+                    <h5 class="text-center" id="trainScheduleTitle">Train Schedule</h5>
                     <table class="table table-hover">
                             <thead class="tableHeader">
                               <tr>
