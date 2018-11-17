@@ -61,7 +61,7 @@ $(document).ready(function(){
         let currentTime = moment();
         console.log(currentTime);
 
-        //convert user input/child snapshot for newFirstTrainTime to exactly 1 year prior to ensure that entry is before the present day/time. Actual calender year is insignificant for the calculations in this app to function properly.
+        //convert user input/child snapshot for newFirstTrainTime to exactly 1 year prior to ensure that entry is before the present day/time.
         let startTimeConverted = moment(newFirstTrainTime, "hh:mm").subtract(1, "years");
         console.log(startTimeConverted);
         
