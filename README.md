@@ -2,7 +2,7 @@
 
 ## Overview
 
-This app is a web-based model of a mock train scheduler that utilizes Google's Firebase for it's persistence.  Users can add trains to the schedule to determine the arrival of the next train based on time & frequency. A live demo of the app can be accessed [here.](https://packleader206.github.io/Train-Scheduler/) 
+This app is a web-based model of a mock train scheduler that utilizes Google's Firebase for it's persistence.  Users can add trains to the schedule to determine the arrival of the next train based on time & frequency.  
 
 ## Technologies Used
 
@@ -13,6 +13,10 @@ This app is a web-based model of a mock train scheduler that utilizes Google's F
 - JQuery
 - Firebase
 - Moment.js
+
+## Live Demo
+
+<strong>[Click Here](https://packleader206.github.io/Train-Scheduler/)</strong>
 
 ## Author
 
