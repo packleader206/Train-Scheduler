@@ -18,4 +18,4 @@ This app is a web-based model of a mock train scheduler that utilizes Google's F
 
 Al Young
 
-<img src="https://packleader206.github.io/Responsive-Portfolio/assets/images/trainsSchedulerScreenshot.png" alt="Train Scheduler">
+<img src="https://packleader206.github.io/Train-Scheduler/assets/images/trainSchedulerScreenshot.png" alt="Train Scheduler">
