@@ -14,11 +14,12 @@ This app is a web-based model of a mock train scheduler that utilizes Google's F
 - Firebase
 - Moment.js
 
-## Live Demo: [Click Here](https://packleader206.github.io/Train-Scheduler/)
-
 ## Author:
 
 Al Young
 <hr>
+
+## [Click Here for a Live Demo](https://packleader206.github.io/Train-Scheduler/)
+<br>
 
 <img src="https://packleader206.github.io/Train-Scheduler/assets/images/trainSchedulerScreenshot.png" alt="Train Scheduler">
