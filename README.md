@@ -1,10 +1,10 @@
 # Pacific Northwest Train Scheduler
 
-## Overview
+## Overview:
 
 This app is a web-based model of a mock train scheduler that utilizes Google's Firebase for it's persistence.  Users can add trains to the schedule to determine the arrival of the next train based on time & frequency.  
 
-## Technologies Used
+## Technologies Used:
 
 - HTML
 - CSS
@@ -14,9 +14,9 @@ This app is a web-based model of a mock train scheduler that utilizes Google's F
 - Firebase
 - Moment.js
 
-## Live Demo [Click Here](https://packleader206.github.io/Train-Scheduler/)
+## Live Demo: [Click Here](https://packleader206.github.io/Train-Scheduler/)
 
-## Author
+## Author:
 
 Al Young
 <hr>
