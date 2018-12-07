@@ -16,7 +16,7 @@ This app is a web-based model of a mock train scheduler that utilizes Google's F
 
 ## Author:
 
-Al Young
+<strong>Al Young</strong>
 <hr>
 
 ## [Click Here for a Live Demo](https://packleader206.github.io/Train-Scheduler/)
